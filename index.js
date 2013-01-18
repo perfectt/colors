@@ -3,8 +3,8 @@
  * Dependencies
  */
 
-var color = require('component-color')
-  , parse = require('component-color-parser');
+var color = require('color')
+  , parse = require('color-parser');
 
 /**
  * Expose `color`
@@ -30,8 +30,8 @@ color.random = function() {
  * Get either white or black depending on the color
  */
 
-color.getInverse = function(color) {
-  var yiq = (color.r * 299 + color.g * 587 + color.b * 114) / 1000;
+color.getInverse = function(c) {
+  var yiq = (c.r * 299 + c.g * 587 + c.b * 114) / 1000;
   return (yiq >= 128) ? color.rgba(0, 0, 0, 1) : color.rgba(255, 255, 255, 1);
 };
 
